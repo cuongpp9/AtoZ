@@ -1,0 +1,83 @@
+import gql from 'graphql-tag';
+
+export default id => gql`
+  query {
+    getPriceOfferById(input: { id: "${id}" }) {
+      id
+      name
+      description
+      transactionType
+      itemId
+      pricingModel
+      serviceType
+      serviceAddOn
+      startUnit
+      startDuration
+      endUnit
+      endDuration
+      minimumQuantity
+      maximumQuantity
+      salesChannel
+      marketSegment
+      accountType
+      accountSubType
+      startDate
+      endDate
+      status
+      flatPricing{
+      prices{
+        index
+        currencyId
+        amount
+        isQuantityScalable
+      }
+      grants{
+        resourceId
+        amount
+        grantDuration
+        grantUnit
+        isQuantityScalable
+      }
+    }
+      recurringPricing{
+        purchaseProration
+        cancelProration
+        upgradeProration
+        downgradeProration
+        prices{
+          index
+          currencyId
+          amount
+          isQuantityScalable
+        }
+        grants{
+          resourceId
+          amount
+          grantDuration
+          grantUnit
+          isQuantityScalable
+        }
+      }
+      customerPricing {
+        index
+        salesChannel
+        marketSegment
+        accountType
+        accountSubType
+        prices{
+          index
+          currencyId
+          amount
+          isQuantityScalable
+        }
+        grants{
+          resourceId
+          amount
+          grantDuration
+          grantUnit
+          isQuantityScalable
+        }
+      }
+    }
+  }
+`;

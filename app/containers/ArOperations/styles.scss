@@ -1,0 +1,14 @@
+.column_active {
+  background: #ffe4b5;
+}
+.ops-page {
+  &.ops-page-index {
+    .select-table-block {
+      .card-body {
+        padding: 0;
+        min-height: 0.01%;
+       
+      }
+    }
+  }
+}

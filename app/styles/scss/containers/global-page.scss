@@ -1,0 +1,76 @@
+.global-page {
+  .card {
+    .card-body {
+      border: 1px solid $color_border_dark;
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      border-radius: 2px;
+      padding: 0;
+    }
+    .table-block {
+      .card-body {
+        min-height: 0.01%;
+        overflow-x: auto;
+      }
+    }
+  }
+  .bottom-button-group {
+    border-top: 1px solid $color_border_dark;
+    padding: 15px 5%;
+    margin: 0;
+  }
+  .table-title-form-detail {
+    background-color: #f6f8f8;
+    border: 1px solid $color_border_dark;
+  }
+}
+// detail pricing management
+
+.global-page {
+  .table-content {
+    border: 1px solid $color_border_dark;
+    border-top: none;
+    .table-content__body {
+      border: 1px solid $color_border_dark;
+      padding: 15px;
+      .table-content__block {
+        border: none;
+      }
+      .table-content__info {
+        margin-bottom: 15px;
+        .table-content__info-child:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        .table {
+          border-top: none;
+        }
+      }
+      .table-content__inner {
+        border: 1px solid $color_border_dark;
+        &.no-border {
+          border: none;
+        }
+        .table-content__header {
+          padding: 10px 15px;
+          border-bottom: 1px solid $color_border_dark;
+          background-color: #f6f8f8;
+          ul {
+            li {
+              display: inline-block;
+              @include list-space(80px);
+            }
+          }
+        }
+        .table-content__item {
+          padding: 20px;
+        }
+      }
+    }
+  }
+}
+.section-form-child {
+  .table-title-style {
+    padding: 15px 15px 0 15px;
+    margin-bottom: 0;
+  }
+}

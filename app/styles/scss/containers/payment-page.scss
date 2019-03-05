@@ -1,0 +1,41 @@
+.payment-page {
+  .form-collapse {
+    .card {
+      .card-body {
+        padding: 0;
+      }
+    }
+  }
+  .form-content {
+    background-color: #fff;
+    .form-header {
+      padding: 15px;
+      background-color: #d5d5d5;
+    }
+  }
+  .form-apply {
+    background-color: #fff;
+    .form-apply__header {
+      padding: 15px;
+      background-color: #d5d5d5;
+    }
+    .form-apply__body {
+      padding: 20px 30px;
+      .form {
+        .form__form-group {
+          margin-bottom: 20px;
+          &.input-textarea {
+            .form__form-group-label {
+              width: 10%;
+              margin: 0;
+            }
+            .form__form-group-field {
+              width: 90%;
+              padding-left: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

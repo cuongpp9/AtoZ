@@ -1,0 +1,556 @@
+{
+  "currencies": [
+    {
+      "id": 1,
+      "name": "Afghanistan Afghani",
+      "code": "AFN",
+      "rate": null
+    },
+    {
+      "id": 2,
+      "name": "Algerian Dinar",
+      "code": "DZD",
+      "rate": null
+    },
+    {
+      "id": 3,
+      "name": "Angolan Kwanza",
+      "code": "AOA",
+      "rate": null
+    },
+    {
+      "id": 4,
+      "name": "Argentine Peso",
+      "code": "ARS",
+      "rate": "0.0504"
+    },
+    {
+      "id": 5,
+      "name": "Aruban Florin",
+      "code": "AWG",
+      "rate": null
+    },
+    {
+      "id": 6,
+      "name": "Australian Dollar",
+      "code": "AUD",
+      "rate": "0.7734"
+    },
+    {
+      "id": 7,
+      "name": "Bahraini Dinar",
+      "code": "BHD",
+      "rate": null
+    },
+    {
+      "id": 8,
+      "name": "Bolivian Boliviano",
+      "code": "BOB",
+      "rate": null
+    },
+    {
+      "id": 9,
+      "name": "Bosnia and Herzegovina Mark",
+      "code": "BAM",
+      "rate": null
+    },
+    {
+      "id": 10,
+      "name": "Botswana Pula",
+      "code": "BWP",
+      "rate": null
+    },
+    {
+      "id": 11,
+      "name": "Brazilian Real",
+      "code": "BRL",
+      "rate": "0.3032"
+    },
+    {
+      "id": 12,
+      "name": "Bulgarian Lev",
+      "code": "BGN",
+      "rate": "0.6346"
+    },
+    {
+      "id": 13,
+      "name": "Cambodian Riel",
+      "code": "KHR",
+      "rate": null
+    },
+    {
+      "id": 14,
+      "name": "Canadian Dollar",
+      "code": "CAD",
+      "rate": "0.7758"
+    },
+    {
+      "id": 15,
+      "name": "Central African CFA franc",
+      "code": "XAF",
+      "rate": null
+    },
+    {
+      "id": 16,
+      "name": "Chilean Peso",
+      "code": "CLP",
+      "rate": "0.001644"
+    },
+    {
+      "id": 17,
+      "name": "Chinese Yuan Renminbi",
+      "code": "CNY",
+      "rate": "0.1593"
+    },
+    {
+      "id": 18,
+      "name": "Colombian Peso",
+      "code": "COP",
+      "rate": null
+    },
+    {
+      "id": 19,
+      "name": "Costa Rican Colon",
+      "code": "CRC",
+      "rate": null
+    },
+    {
+      "id": 20,
+      "name": "Croatian Kuna",
+      "code": "HRK",
+      "rate": null
+    },
+    {
+      "id": 21,
+      "name": "Cyprus Pound",
+      "code": "CYP",
+      "rate": "2.3808"
+    },
+    {
+      "id": 22,
+      "name": "Czech Koruna",
+      "code": "CZK",
+      "rate": "0.04877"
+    },
+    {
+      "id": 23,
+      "name": "Denmark Krone",
+      "code": "DKK",
+      "rate": "0.1666"
+    },
+    {
+      "id": 24,
+      "name": "Dominican Republic Peso",
+      "code": "DOP",
+      "rate": null
+    },
+    {
+      "id": 25,
+      "name": "Egyptian Pound",
+      "code": "EGP",
+      "rate": "0.05674"
+    },
+    {
+      "id": 26,
+      "name": "Euro",
+      "code": "EUR",
+      "rate": "1.2411"
+    },
+    {
+      "id": 27,
+      "name": "Fiji Dollar",
+      "code": "FJD",
+      "rate": "0.5012"
+    },
+    {
+      "id": 28,
+      "name": "Ghanaian Cedi",
+      "code": "GHS",
+      "rate": null
+    },
+    {
+      "id": 29,
+      "name": "Guatemalan Quetzal",
+      "code": "GTQ",
+      "rate": null
+    },
+    {
+      "id": 30,
+      "name": "Guyanese Dollar",
+      "code": "GYD",
+      "rate": null
+    },
+    {
+      "id": 31,
+      "name": "Hong Kong Dollar",
+      "code": "HKD",
+      "rate": "0.1274"
+    },
+    {
+      "id": 32,
+      "name": "Hungarian Forint",
+      "code": "HUF",
+      "rate": "0.003969"
+    },
+    {
+      "id": 33,
+      "name": "Icelandic Krona",
+      "code": "ISK",
+      "rate": "0.01017"
+    },
+    {
+      "id": 34,
+      "name": "Indian Rupee",
+      "code": "INR",
+      "rate": "0.01542"
+    },
+    {
+      "id": 35,
+      "name": "Indonesian Rupiah",
+      "code": "IDR",
+      "rate": "0.00007281"
+    },
+    {
+      "id": 36,
+      "name": "Israel New Shekel",
+      "code": "ILS",
+      "rate": "0.2865"
+    },
+    {
+      "id": 37,
+      "name": "Jamaican Dollar",
+      "code": "JMD",
+      "rate": "0.008118"
+    },
+    {
+      "id": 38,
+      "name": "Japanese Yen",
+      "code": "JPY",
+      "rate": "0.009513"
+    },
+    {
+      "id": 39,
+      "name": "Jordanian Dinar",
+      "code": "JOD",
+      "rate": null
+    },
+    {
+      "id": 40,
+      "name": "Kenyan shilling",
+      "code": "KES",
+      "rate": null
+    },
+    {
+      "id": 41,
+      "name": "Kuwaiti Dinar",
+      "code": "KWD",
+      "rate": null
+    },
+    {
+      "id": 42,
+      "name": "Latvian Lats",
+      "code": "LVL",
+      "rate": "1.9769"
+    },
+    {
+      "id": 43,
+      "name": "Lebanese Pound",
+      "code": "LBP",
+      "rate": null
+    },
+    {
+      "id": 44,
+      "name": "Liberian Dollar",
+      "code": "LRD",
+      "rate": null
+    },
+    {
+      "id": 45,
+      "name": "Lithuanian Litas",
+      "code": "LTL",
+      "rate": "0.3594"
+    },
+    {
+      "id": 46,
+      "name": "Macau Pataca",
+      "code": "MOP",
+      "rate": null
+    },
+    {
+      "id": 47,
+      "name": "Madagascar Ariary",
+      "code": "MGA",
+      "rate": null
+    },
+    {
+      "id": 48,
+      "name": "Malawian Kwacha",
+      "code": "MWK",
+      "rate": null
+    },
+    {
+      "id": 49,
+      "name": "Malaysian Ringgit",
+      "code": "MYR",
+      "rate": "0.2563"
+    },
+    {
+      "id": 50,
+      "name": "Mexican Peso",
+      "code": "MXN",
+      "rate": "0.05425"
+    },
+    {
+      "id": 51,
+      "name": "Mongolian Tugrik",
+      "code": "MNT",
+      "rate": null
+    },
+    {
+      "id": 52,
+      "name": "New Caledonian CFP Franc",
+      "code": "XPF",
+      "rate": null
+    },
+    {
+      "id": 53,
+      "name": "New Turkish Lira",
+      "code": "TRY",
+      "rate": "0.2509"
+    },
+    {
+      "id": 54,
+      "name": "New Zealand Dollar",
+      "code": "NZD",
+      "rate": "0.7288"
+    },
+    {
+      "id": 55,
+      "name": "Nigerian Naira",
+      "code": "NGN",
+      "rate": null
+    },
+    {
+      "id": 56,
+      "name": "no currency",
+      "code": "NONE",
+      "rate": null
+    },
+    {
+      "id": 57,
+      "name": "Norwegian Krone",
+      "code": "NOK",
+      "rate": "0.1298"
+    },
+    {
+      "id": 58,
+      "name": "Omani Rial",
+      "code": "OMR",
+      "rate": null
+    },
+    {
+      "id": 59,
+      "name": "Pakistan Rupee",
+      "code": "PKR",
+      "rate": "0.008651"
+    },
+    {
+      "id": 60,
+      "name": "Papua New Guinea Kina",
+      "code": "PGK",
+      "rate": null
+    },
+    {
+      "id": 61,
+      "name": "Peruvian Nuevo Sol",
+      "code": "PEN",
+      "rate": null
+    },
+    {
+      "id": 62,
+      "name": "Philippines Peso",
+      "code": "PHP",
+      "rate": "0.01915"
+    },
+    {
+      "id": 63,
+      "name": "Polish Zloty",
+      "code": "PLN",
+      "rate": "0.2934"
+    },
+    {
+      "id": 64,
+      "name": "Pound Sterling (U.K.)",
+      "code": "GBP",
+      "rate": "1.4225"
+    },
+    {
+      "id": 65,
+      "name": "Qatari Riyal",
+      "code": "QAR",
+      "rate": null
+    },
+    {
+      "id": 66,
+      "name": "Romanian Leu",
+      "code": "RON",
+      "rate": "0.2664"
+    },
+    {
+      "id": 67,
+      "name": "Russian Ruble",
+      "code": "RUB",
+      "rate": "0.01756"
+    },
+    {
+      "id": 68,
+      "name": "Samoan Tala",
+      "code": "WST",
+      "rate": null
+    },
+    {
+      "id": 69,
+      "name": "Saudi Arabian Riyal",
+      "code": "SAR",
+      "rate": "0.2667"
+    },
+    {
+      "id": 70,
+      "name": "Serbian Dinar",
+      "code": "RSD",
+      "rate": null
+    },
+    {
+      "id": 71,
+      "name": "Singapore Dollar",
+      "code": "SGD",
+      "rate": "0.7626"
+    },
+    {
+      "id": 72,
+      "name": "Solomon Islands Dollar",
+      "code": "SBD",
+      "rate": null
+    },
+    {
+      "id": 73,
+      "name": "South African Rand",
+      "code": "ZAR",
+      "rate": "0.08563"
+    },
+    {
+      "id": 74,
+      "name": "South Korean Won",
+      "code": "KRW",
+      "rate": "0.0009283"
+    },
+    {
+      "id": 75,
+      "name": "Sri Lankan Rupee",
+      "code": "LKR",
+      "rate": null
+    },
+    {
+      "id": 76,
+      "name": "Sudanese Dinar",
+      "code": "SDD",
+      "rate": null
+    },
+    {
+      "id": 77,
+      "name": "Surinamese Dollar",
+      "code": "SRD",
+      "rate": null
+    },
+    {
+      "id": 78,
+      "name": "Swedish Krona",
+      "code": "SEK",
+      "rate": "0.1218"
+    },
+    {
+      "id": 79,
+      "name": "Swiss Franc",
+      "code": "CHF",
+      "rate": "1.0572"
+    },
+    {
+      "id": 80,
+      "name": "Syrian Pound",
+      "code": "SYP",
+      "rate": null
+    },
+    {
+      "id": 81,
+      "name": "Taiwan New Dollar",
+      "code": "TWD",
+      "rate": "0.03429"
+    },
+    {
+      "id": 82,
+      "name": "Tanzanian Shilling",
+      "code": "TZS",
+      "rate": null
+    },
+    {
+      "id": 83,
+      "name": "Thailand Baht",
+      "code": "THB",
+      "rate": "0.0321"
+    },
+    {
+      "id": 84,
+      "name": "Trinidad and Tobago Dollar",
+      "code": "TTD",
+      "rate": null
+    },
+    {
+      "id": 85,
+      "name": "Turkish Lira",
+      "code": "TRL",
+      "rate": "0.0000007322"
+    },
+    {
+      "id": 86,
+      "name": "U.S. Dollar",
+      "code": "USD",
+      "rate": "1.0"
+    },
+    {
+      "id": 87,
+      "name": "Ugandan Shilling",
+      "code": "UGX",
+      "rate": null
+    },
+    {
+      "id": 88,
+      "name": "Ukrainian Hryvnia",
+      "code": "UAH",
+      "rate": null
+    },
+    {
+      "id": 89,
+      "name": "United Arab Emirates Dirham",
+      "code": "AED",
+      "rate": null
+    },
+    {
+      "id": 90,
+      "name": "Venezuelan Bolivar Fuerte",
+      "code": "VEF",
+      "rate": "0.00002286"
+    },
+    {
+      "id": 91,
+      "name": "Vietnamese Dong",
+      "code": "VND",
+      "rate": null
+    },
+    {
+      "id": 92,
+      "name": "Yemeni Rial",
+      "code": "YER",
+      "rate": null
+    }
+  ]
+}

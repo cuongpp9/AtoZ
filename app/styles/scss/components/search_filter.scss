@@ -1,0 +1,20 @@
+.search-filter {
+  .form {
+    margin: 15px -15px 0px -15px;
+    .form__form-group {
+      width: 14%;
+      margin-bottom: 10px;
+      @include list-space(10px);
+    }
+    .form__form-group-field {
+      height: 100%;
+    }
+    .search-filter__btn {
+      height: 40px;
+      line-height: 0;
+    }
+    .form__button-toolbar {
+      margin-top: 0;
+    }
+  }
+}

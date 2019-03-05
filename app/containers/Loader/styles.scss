@@ -1,0 +1,26 @@
+.nav-absolute-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  // width: 90px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.absolute-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.page-loader {
+  position: relative;
+  top: 45%;
+  background-color: #ffffff;
+  left: 50%;
+}

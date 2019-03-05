@@ -1,0 +1,22 @@
+@mixin inputIcon($path, $size, $position: right){
+  background: url($path);
+  background-repeat: no-repeat;
+  background-position: $position 0.50rem center;
+  background-size: $size;
+}
+
+.ico-processing-lg {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: transparent;
+  .icon {
+    background-position: left 0rem center !important;
+    width: 45px;
+    height: 45px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    &.processing{
+      @include inputIcon('../../images/icons/processing.png', 45px, left);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.header-tab {
+  font-size: 16px;
+  color: #007bff;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 70px;
+  left: 0;
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,.05);
+  background-color: #fff;
+  .nav {
+    justify-content: center;
+    padding: 10px;
+  }
+}

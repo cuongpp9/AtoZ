@@ -1,0 +1,171 @@
+.form-collapse {
+  // margin-bottom: -30px;
+  > .col-lg-12 {
+    padding: 0;
+  }
+  .collapse__wrapper {
+    &.boxed {
+      border: none;
+      .collapse__title {
+        border: 1px solid $color_border_dark;
+        background-color: #a2c0f2;
+        padding: 0;
+      }
+      &.collapse__content {
+        margin: 15px;
+      }
+      .panel__heading {
+        &.panel__heading--btn {
+          .panel__title {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+    &.active {
+      .collapse__title {
+        background-color: #dee5e7;
+      }
+    }
+    .panel__heading {
+      &.panel__heading--btn {
+        i {
+          padding: 10px 15px;
+          background-color: #fff;
+        }
+      }
+    }
+    .collapse__title:hover {
+      background-color: #a2c0f280;
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+.form-section {
+  @include clearfix();
+  ul {
+    padding-left: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  section {
+    border: 1px solid $color_border_dark;
+    margin: 10px;
+    .table-title {
+      position: relative;
+      .form-section__icon-trash {
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        cursor: pointer;
+        i {
+          font-size: 18px;
+        }
+        &.form-section__icon-trash--show {
+          display: block;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .form-content {
+      padding: 20px;
+      .form-content__center {
+        width: 70%;
+        margin: 0 auto;
+      }
+      .form__block {
+        padding: 20px;
+        border: 1px solid $color_border_dark;
+        position: relative;
+        margin-bottom: 10px;
+        .form__half:first-child {
+          margin-right: 30px;
+        }
+        button {
+          position: absolute;
+          top: 10px;
+          right: 5px;
+        }
+      }
+    }
+    .form-content.body-modal-add-component, .form-content.body-modal-submit {
+      border: 1px solid #b6d6b6;
+      background-color: #e6f2e6;
+    }
+    .form-content.body-modal-cancel {
+      border: 1px solid #d9b4b4;
+      background-color: #f2e6e6;
+    }
+  }
+  .form-section__btn-add {
+    margin-left: 65px;
+    &.form-section__btn-add-input {
+      margin-left: 157px;
+    }
+  }
+  .form-section__btn-next {
+    float: right;
+  }
+}
+.section-form-child {
+  margin: 20px 0 0 0;
+  .table-title {
+    position: relative;
+    padding: 15px;
+    margin-bottom: 20px;
+    .form-section__icon-trash {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+    }
+  }
+  .form-content {
+    padding: 0 20px 20px 20px;
+  }
+  &:first-child {
+    margin: 0;
+  }
+}
+.form-section {
+  .section {
+    position: relative;
+    margin: 0;
+    .button-trash {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 0 5px;
+      i {
+        color: #ff4861;
+        font-size: 20px;
+      }
+      cursor: pointer;
+      &:hover {
+        background-color: darken(#ff4861, 10%);
+        border-color: darken(#ff4861, 10%);
+        i {
+          color: darken(#fff, 20%);
+        }
+      }
+    }
+    .form-content {
+      &.form-content--trash {
+        margin-top: 20px;
+      }
+    }
+    &.section-form-order {
+      border: none;
+      margin: 0;
+      .button-trash {
+        top: -43px;
+        right: 0;
+      }
+    }
+  }
+}

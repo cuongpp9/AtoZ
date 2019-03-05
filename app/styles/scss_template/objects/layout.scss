@@ -1,0 +1,38 @@
+.container {
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    max-width: 1460px;
+  }
+}
+
+.wrapper {
+  &.wrapper--full-width {
+    .container__wrap {
+      padding-left: 0;
+
+      @media screen and (min-width: 576px) {
+        padding-left: 60px;
+      }
+    }
+  }
+
+  &.top-navigation {
+    .container__wrap {
+      @media screen and (min-width: 576px) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.container__wrap {
+  padding-left: 0;
+  background-color: #e8e8e8;
+  padding-top: 45px;
+  min-height: 100%;
+  transition: padding-left 0.3s;
+
+  @media screen and (min-width: 576px) {
+    padding-left: 240px;
+  }
+}

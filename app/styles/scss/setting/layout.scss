@@ -1,0 +1,37 @@
+.wrapper {
+  &.wrapper--full-width {
+    .container__wrap {
+      padding-left: 0;
+
+      @media screen and (min-width: 576px) {
+        padding-left: 60px;
+      }
+    }
+  }
+
+  &.top-navigation {
+    .container__wrap {
+      @media screen and (min-width: 576px) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.container {
+  .container-full {
+    height: 100%;
+  }
+}
+
+.container__wrap {
+  padding-left: 0;
+  padding-top: 67px;
+  min-height: 100%;
+  transition: padding-left 0.3s;
+  background-color: $color-background;
+
+  @media screen and (min-width: 576px) {
+    padding-left: 240px;
+  }
+}

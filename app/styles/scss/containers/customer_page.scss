@@ -1,0 +1,25 @@
+.customer-page {
+  .form-collapse {
+    .card {
+      .card-body {
+        padding: 0;
+      }
+    }
+  }
+}
+.account-assets,
+.account-services,
+.account-balance,
+.account-transaction {
+  border: 1px solid $color_border_dark;
+  background-color: #fff;
+  padding: 20px;
+  .table-info {
+    @include list-enter(20px);
+  }
+}
+.account-balance {
+  > * {
+    @include list-enter(20px);
+  }
+}

@@ -1,0 +1,24 @@
+.pricing-page {
+  .container-inner {
+    padding-bottom: 60px;
+  }
+}
+.label-content {
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #dee5e7;
+  border: 1px solid $color_border_dark;
+  padding: 5px 15px;
+}
+
+.customer-pricing-content,
+.flat-pricing-content,
+.bundle-content {
+  margin-top: 20px;
+  .section-form-child {
+    .table-title {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.customer-field{
+  .panel, .card-body {
+    border: none
+  }
+  .panel__title {
+    display: none;
+  }
+  .panel__content {
+    margin-top: 15px;
+  }
+}

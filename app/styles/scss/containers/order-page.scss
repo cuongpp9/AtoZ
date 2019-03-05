@@ -1,0 +1,305 @@
+.order-page {
+  .table-content__info {
+    padding: 20px;
+    .panel__body {
+      .panel__content {
+        .card-body {
+          min-height: 0.01%;
+          overflow-x: auto;
+          overflow-y: hidden;
+        }
+      }
+    }
+  }
+  .table-info {
+    background-color: #fff;
+  }
+  .order-detail {
+    .table-info {
+      @include list-enter(20px);
+    }
+  }
+}
+
+.order-create {
+  .select-account {
+    background-color: #fff;
+    padding: 20px;
+  }
+  .order-select-item,
+  .order-create-info {
+    .table-title {
+      background-color: #d5d5d5;
+    }
+  }
+  .order-select-content {
+    border: 1px solid $color_border_dark;
+    background-color: #fff;
+    .btn-select {
+      width: 100%;
+      margin-top: 20px;
+      .btn-select-tab {
+        display: inline-block;
+        margin: 0 auto;
+        button {
+          @include list-space(20px);
+        }
+      }
+    }
+  }
+}
+
+.order-content {
+  margin-top: 20px;
+  .order-content__inner {
+    border: 1px solid $color_border_dark;
+    padding: 20px;
+  }
+  .form-collapse {
+    .panel__title {
+      background-color: inherit;
+      padding: 0;
+      color: #222;
+    }
+  }
+}
+
+.line-content {
+  padding: 20px;
+  .line-content__inner {
+    border: 1px solid $color_border_dark;
+    padding: 20px;
+  }
+}
+
+.order-select-account,
+.order-select-package {
+  .card-body {
+    padding: 0;
+  }
+}
+
+.order-select-package {
+  padding: 20px;
+}
+.form {
+  .table-form {
+    .form__form-group-field {
+      width: 100%;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    table {
+      th {
+        padding: 0.75rem 1rem;
+        &.resize-col {
+          padding: 0.75rem 2.5rem;
+        }
+      }
+      td {
+        padding: 0 0.5rem;
+        input {
+          border: none;
+        }
+        .form__form-group-input-wrap {
+          input {
+            border: 1px solid $color-border-input-success;
+          }
+          &.form-require {
+            input {
+              border: 1px solid $color-border-input-error;
+            }
+          }
+        }
+        .form__form-group-select {
+          .css-1aya2g8 {
+            border: none;
+          }
+          .css-15k3avv {
+            position: static;
+          }
+          &.active-error {
+            .css-1aya2g8 {
+              border: 1px solid $color-border-input-error;
+            }
+          }
+          &.active-success {
+            .css-1aya2g8 {
+              border: 1px solid $color-border-input-success;
+            }
+          }
+        }
+        &.txt-error {
+          padding: 1rem;
+        }
+        .react-datepicker-popper {
+          position: static !important;
+          transform: translate3d(0, 0, 0) !important;
+        }
+      }
+    }
+    .card-body {
+      min-height: 0.01%;
+      overflow-x: auto;
+      padding: 0;
+    }
+
+    &.table-form-service-unit {
+      table {
+        td {
+          padding: 1rem;
+          &.td-style {
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+    &.table-form-service {
+      .card-body {
+        overflow-y: hidden;
+      }
+      table {
+        td {
+          .form__form-group {
+            position: static;
+          }
+          .form__form-group-select {
+            position: static;
+            .css-15k3avv {
+              position: static;
+            }
+            .css-1aya2g8 ~ div {
+              position: absolute;
+              z-index: 1000;
+            }
+            .css-2o5izw ~ div {
+              position: absolute;
+              z-index: 1000;
+            }
+          }
+        }
+      }
+    }
+    &.table-form-price-unit {
+      table {
+        td {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+    &.table-form-line {
+      table {
+        td {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.form-section {
+  &.form-section-service {
+    background-color: #fff;
+    border: 1px solid $color_border_dark;
+    @include list-enter(20px);
+    .form-section-service__header {
+      padding: 15px;
+      background-color: #d5d5d5;
+    }
+  }
+}
+
+.form-service {
+  padding: 15px 0;
+  .form-service-content {
+    padding: 0 15px;
+
+    &:not(:last-child) {
+      margin-top: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $color_border_dark;
+    }
+    .override-btn {
+      margin-bottom: 0;
+      flex-direction: row-reverse;
+    }
+  }
+  .form-child-line {
+    margin-top: 20px;
+    .form-child-line__header {
+      padding: 10px;
+      background-color: #d5d5d5;
+    }
+  }
+}
+
+.order-create-info {
+  background-color: #fff;
+  .form-content {
+    padding: 20px 5%;
+  }
+}
+.order-select-item {
+  margin-bottom: 40px;
+}
+
+.form-subscription {
+  background-color: #fff;
+  .form-subscription__header {
+    padding: 15px;
+    background-color: #d5d5d5;
+  }
+  .form-subscription__body {
+    padding: 20px;
+    .table-service-unit {
+      border: 1px solid $color_border_dark;
+      margin-top: 20px;
+      .table-service-unit__header {
+        padding: 15px;
+        background-color: #d5d5d5;
+      }
+    }
+  }
+}
+
+.order-edit-form {
+  background-color: #fff;
+  .order-edit-form__header {
+    padding: 15px;
+    background-color: #d5d5d5;
+  }
+  .order-edit-form__body {
+    padding: 20px 40px;
+  }
+  .form-service {
+    padding: 15px 0;
+  }
+  .add-remove__btn {
+    margin: 0 15px;
+  }
+}
+
+.order-modify {
+  .table-subscription {
+    .card-body {
+      min-height: 0.01%;
+      overflow-x: auto;
+      padding: 0;
+    }
+  }
+  .order-modify-inner {
+    background-color: #fff;
+    .btn-choose {
+      margin: 0;
+      padding: 0 0 20px 20px;
+    }
+  }
+}
+.table-form-service-unit {
+  .form-child-price-unit {
+    .form-child-price-unit__header {
+      padding: 10px;
+      background-color: #d5d5d5;
+    }
+  }
+}

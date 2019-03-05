@@ -1,0 +1,22 @@
+.panel-fix {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid $color_border_dark;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border-radius: 2px;
+    .panel__heading {
+      padding: 10px 15px;
+      border-bottom: 1px solid $color_border_light;
+      border-radius: 2px 2px 0 0;
+    }
+    &.panel--default {
+      .panel__heading {
+        border-color: $color_border_light;
+        background-color: #fff;
+      }
+      .btn {
+        margin-bottom: 0;
+      }
+    }
+}

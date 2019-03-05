@@ -1,0 +1,171 @@
+%boder-user-details{
+  border-color: hsl(0,0%,80%);
+  border-style: solid;
+  border-width: 2px;
+  padding: 10px;
+  padding-left: 30px;
+  margin-top: -17px;
+}
+
+%label-user-details{
+  padding: 7px;
+  padding-left: 10px;
+  height: 40px;
+  border-color: rgb(250, 250, 250);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.user-management {
+  .center-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .border-gray {
+    border: solid 1px #dddddd;
+  }
+  .form-collapse {
+    .card {
+      .card-body {
+        padding: 0;
+      }
+    }
+  }
+  .form-content {
+    background-color: #fff;
+    .form-header {
+      padding: 15px;
+      background-color: #d5d5d5;
+    }
+  }
+  .form-apply {
+    background-color: #fff;
+    .form-apply__header {
+      padding: 15px;
+      background-color: #d5d5d5;
+    }
+    .form-apply__body {
+      padding: 20px 30px;
+      .form {
+        .form__form-group {
+          margin-bottom: 20px;
+          &.input-textarea {
+            .form__form-group-label {
+              width: 10%;
+              margin: 0;
+            }
+            .form__form-group-field {
+              width: 90%;
+              padding-left: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-search-filter {
+
+    .form__form-group {
+      width: 22%;
+      padding-left: 0px;
+      padding-right: 20px;
+    }
+    .form__form-group {
+      margin-top: 0px;
+    }
+    .form__button-toolbar{
+      margin-top: 0px;
+    }
+  }
+  .user_details_address{
+    margin-left: 30px;
+  }
+
+  .form-detail-user{
+    @extend %boder-user-details;
+
+    .form__form-group{
+      padding-bottom: 5px;
+      padding-left: 50px;
+
+      .form__form-group-label{
+        @extend %label-user-details;
+
+      }
+      input{
+        width: 300px;
+      }
+    }
+  }
+
+  .form-detail-user-contact{
+    @extend %boder-user-details;
+
+    .user-contact-left{
+      width: 50%;
+      float: left;
+
+      .form__form-group{
+        margin-bottom: 10px;
+        .form__form-group-label{
+          @extend %label-user-details;
+        }
+      }
+
+      input{
+        width: 300px;
+      }
+    }
+    .user-contact-right{
+      width: 50%;
+      float: right;
+
+      .form-panel-user{
+        width: 50%;
+        margin: auto;
+
+        .panel__title{
+          background-color: #d5d5d5;
+          padding: 10px 2px 10px 10px;
+
+          h2{
+            color: #343a40;
+          }
+        }
+      }
+    }
+  }
+
+  .form-detail-user-role{
+    @extend %boder-user-details;
+    .form-panel-user{
+      width: 20%;
+
+      .panel__title{
+        background-color: #d5d5d5;
+        padding: 10px 2px 10px 10px;
+
+        h2{
+          color: #343a40;
+        }
+      }
+    }
+  }
+
+  .form-detail-user-role-group{
+    @extend %boder-user-details;
+    .form-panel-user{
+      width: 20%;
+
+      .panel__title{
+        background-color: #d5d5d5;
+        padding: 10px 2px 10px 10px;
+
+        h2{
+          color: #343a40;
+        }
+      }
+    }
+  }
+}
