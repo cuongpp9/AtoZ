@@ -8,7 +8,7 @@ import { FormCollapse } from 'components/form';
 import { UserDetailForm } from 'components/UserManagement';
 import { createStructuredSelector } from 'reselect';
 import { btnCollapse } from 'constantsApp';
-import { getUserById } from '../../actions';
+import { getUserById, modifyUser } from '../../actions';
 import { makeUserDetail } from '../../selectors';
 import UserDetailsAddress from './UserDetailsAddress';
 import UserDetailsContact from './UserDetailsContact';
@@ -19,16 +19,46 @@ class UserDetail extends React.PureComponent {
   constructor() {
     super();
     this.state = {
+      userDetail: {},
       activeTab: {},
+      isLoadding: false,
     };
   }
 
   componentDidMount() {
     const { id } = this.props;
-    this.props.getUserById({
-      id,
-    });
+    this.props.getUserById(
+      {
+        id,
+      },
+      (response, success) => {
+        if (success) {
+          this.setState({ userDetail: response });
+        }
+      },
+    );
   }
+
+  onChangeValueForm = (fieldName, value) => {
+    const { userDetail } = this.state;
+    userDetail[fieldName] = value;
+    this.setState({
+      userDetail: { ...userDetail },
+    });
+  };
+
+  handleModifyUser = () => {
+    const { userDetail } = this.state;
+
+    this.setState({
+      isLoadding: true,
+    });
+    this.props.modifyUser({ modifyUserInput: userDetail }, () => {
+      this.setState({
+        isLoadding: false,
+      });
+    });
+  };
 
   onToggleTab = activeTabName => {
     const { activeTab } = this.state;
@@ -42,15 +72,30 @@ class UserDetail extends React.PureComponent {
   };
 
   renderItem = item => {
+    // console.log('userDetail', this.state.userDetail);
+    const {
+      userDetail,
+      userDetail: { roles = [], roleGroups },
+    } = this.state;
     switch (item.state) {
       case 'User → Address':
-        return <UserDetailsAddress />;
+        return (
+          <UserDetailsAddress
+            data={userDetail}
+            onChangeValueForm={this.onChangeValueForm}
+          />
+        );
       case 'User → Contact':
-        return <UserDetailsContact />;
+        return (
+          <UserDetailsContact
+            data={userDetail}
+            onChangeValueForm={this.onChangeValueForm}
+          />
+        );
       case 'User → Roles':
-        return <UserDetailsRole />;
-      case 'User→Role Groups':
-        return <UserDetailRoleGroup />;
+        return <UserDetailsRole roles={roles} />;
+      case 'User → Role Groups':
+        return <UserDetailRoleGroup roleGroups={roleGroups} />;
       default:
         return null;
     }
@@ -60,8 +105,8 @@ class UserDetail extends React.PureComponent {
     const { activeTab } = this.state;
     const {
       userDetail,
-      userDetail: { id = '', category = 'AGENT' } = {},
-    } = this.props;
+      userDetail: { id, category },
+    } = this.state;
     return (
       <PageAbstract title="">
         <div className="form-content">
@@ -80,7 +125,10 @@ class UserDetail extends React.PureComponent {
             </Row>
           </div>
         </div>
-        <UserDetailForm data={userDetail} />
+        <UserDetailForm
+          data={userDetail}
+          onChangeValueForm={this.onChangeValueForm}
+        />
         {btnCollapse.user.map(item => (
           <FormCollapse
             noCardBody
@@ -101,6 +149,9 @@ class UserDetail extends React.PureComponent {
             title="Modify"
             titleloading="Modifying"
             disabled={false}
+            onClick={() => {
+              this.handleModifyUser();
+            }}
           />
         </ButtonToolbar>
       </PageAbstract>
@@ -111,12 +162,12 @@ class UserDetail extends React.PureComponent {
 UserDetail.propTypes = {
   id: PropTypes.string,
   getUserById: PropTypes.func,
-  userDetail: PropTypes.object,
+  modifyUser: PropTypes.func,
 };
 
-UserDetail.defaultProps = {
-  userDetail: [],
-};
+// UserDetail.defaultProps = {
+//   userDetail: [],
+// };
 
 const mapStateToProps = createStructuredSelector({
   userDetail: makeUserDetail() || {},
@@ -124,5 +175,5 @@ const mapStateToProps = createStructuredSelector({
 
 export default connect(
   mapStateToProps,
-  { getUserById },
+  { getUserById, modifyUser },
 )(UserDetail);

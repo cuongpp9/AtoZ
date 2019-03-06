@@ -151,7 +151,7 @@ class Table extends PureComponent {
           <div className="table-block">
             <CardBody>
               <div className="table__block">
-                <table className="table table-hover table-bordered">
+                <table className="table table-hover">
                   <thead>
                     <tr>{heads.map(item => this.renderHeader(item))}</tr>
                   </thead>

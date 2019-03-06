@@ -33,3 +33,4 @@ export const GET_USER_BY_ID_SUCCESS =
   'app/user_management/get_user_by_id_success';
 export const GET_USER_BY_ID_FAILURE =
   'app/user_management/get_user_by_id_failure';
+export const MODIFY_USER = 'app/user_management/modify_user';

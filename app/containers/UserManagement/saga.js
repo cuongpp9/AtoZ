@@ -390,6 +390,51 @@ export function* getUserByIdSaga({ payload, cb }) {
   }
 }
 
+// ------ modify Role
+export function* modifyUserSaga({ payload, cb }) {
+  // yield put(isConnecting());
+  yield put(resetNotification());
+  console.log('asdasd', payload);
+  // try {
+  //   const { rolesInput } = payload;
+  //   const response = yield call(mutationRequest, modifyRole(rolesInput));
+  //   if (response.modifyRole) {
+  //     if (cb) {
+  //       cb(true);
+  //     }
+  //     yield put(
+  //       setNotification({
+  //         type: NotificationTypes.success,
+  //         message: `Modify Role successfully `,
+  //       }),
+  //     );
+  //   } else {
+  //     if (cb) {
+  //       cb(false);
+  //     }
+  //     yield put(
+  //       setNotification({
+  //         type: NotificationTypes.error,
+  //         message: `Modify Role failed `,
+  //       }),
+  //     );
+  //   }
+
+  //   yield put(isEndConnected());
+  // } catch (err) {
+  //   if (cb) {
+  //     cb(false);
+  //   }
+  //   yield put(
+  //     setNotification({
+  //       type: NotificationTypes.error,
+  //       message: `Modify Role failed `,
+  //     }),
+  //   );
+  //   yield put(isEndConnected());
+  // }
+}
+
 export default function* collectionsSaga() {
   yield takeLatest(types.SEARCH_ROLES, searchRolesSaga);
   yield takeLatest(types.GET_ROLES_BY_ID, getRoleByIdSaga);
@@ -400,4 +445,5 @@ export default function* collectionsSaga() {
   yield takeLatest(types.CREATE_ROLE_GROUP, createRoleGroupSaga);
   yield takeLatest(types.SEARCH_USERS, searchUsersSaga);
   yield takeLatest(types.GET_USER_BY_ID, getUserByIdSaga);
+  yield takeLatest(types.MODIFY_USER, modifyUserSaga);
 }

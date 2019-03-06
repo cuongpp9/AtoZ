@@ -1,24 +1,73 @@
 import React from 'react';
-// import { Field } from 'redux-form/immutable';
-// import CalendarBlankIcon from 'mdi-react/CalendarBlankIcon';
 import PropTypes from 'prop-types';
-// import listCurrency from '../../../constantsApp/currency.json';
-// import {
-//   FormGroup,
-//   RenderSelectField,
-//   RenderField,
-//   RenderDatePickerField,
-// } from '../../../components/form';
+import { map } from 'lodash';
+import { Button } from 'reactstrap';
 import { FormGroup, FormPanel } from '../../../../components/form';
-// import { required } from './validate/validate';
+
+const heads = [
+  {
+    key: 'Type',
+    name: 'Type',
+  },
+
+  {
+    key: 'Number',
+    name: 'Number',
+  },
+];
+
 export class UserDetailsContact extends React.PureComponent {
   constructor() {
     super();
     this.state = {};
   }
 
-  renderSectionForm() {
-    const isNonPaying = true;
+  renderRow = row => (
+    <tr key={row.type}>
+      <td>{row.type}</td>
+      <td>{row.number}</td>
+    </tr>
+  );
+
+  renderHeader = header => (
+    <th key={header.key} scope="col" className="w-25 p-3">
+      {header.name}
+    </th>
+  );
+
+  renderBodyPhones = ({ data = [] }) => {
+    if (!data || (data && !data.length)) {
+      return (
+        <tbody>
+          <tr>
+            <td colSpan={12}>No record has found!</td>
+          </tr>
+        </tbody>
+      );
+    }
+
+    return <tbody>{data.map(this.renderRow)}</tbody>;
+  };
+
+  onChangeValueForm = (fieldName, value) => {
+    const {
+      data: { contact = [] },
+    } = this.props;
+    contact[0][fieldName] = value;
+    this.props.onChangeValueForm(fieldName, contact);
+  };
+
+  renderSectionForm(data) {
+    const {
+      salutation = '',
+      firstName = '',
+      lastName = '',
+      middleName = '',
+      organization = '',
+      position = '',
+      email = '',
+      phones = [],
+    } = data;
     return (
       <form
         className="form form--horizontal form-detail-user-contact"
@@ -27,65 +76,79 @@ export class UserDetailsContact extends React.PureComponent {
         <div className="user-contact-left">
           <FormGroup title="Salutation" className="font-weight-bold">
             <input
-              name="id"
+              name="salutation"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Salutation"
+              value={salutation || ''}
+              onChange={evt =>
+                this.onChangeValueForm('salutation', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="First Name" className="font-weight-bold">
             <input
-              name="id"
+              name="firstName"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="First Name"
+              value={firstName || ''}
+              onChange={evt =>
+                this.onChangeValueForm('firstName', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="Middle Name" className="font-weight-bold">
             <input
-              name="id"
+              name="middleName"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Middle Name"
+              value={middleName || ''}
+              onChange={evt =>
+                this.onChangeValueForm('middleName', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="Last Name" className="font-weight-bold">
             <input
-              name="id"
+              name="lastName"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Last Name"
+              value={lastName || ''}
+              onChange={evt =>
+                this.onChangeValueForm('lastName', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="Position" className="font-weight-bold">
             <input
-              name="id"
+              name="position"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Position"
+              value={position || ''}
+              onChange={evt =>
+                this.onChangeValueForm('position', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="Organization" className="font-weight-bold">
             <input
-              name="id"
+              name="organization"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Organization"
+              value={organization || ''}
+              onChange={evt =>
+                this.onChangeValueForm('organization', evt.target.value)
+              }
             />
           </FormGroup>
           <FormGroup title="Email" className="font-weight-bold">
             <input
-              name="id"
+              name="email"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Email"
+              value={email || ''}
+              onChange={evt =>
+                this.onChangeValueForm('email', evt.target.value)
+              }
             />
           </FormGroup>
         </div>
@@ -93,30 +156,39 @@ export class UserDetailsContact extends React.PureComponent {
           <FormPanel title="Phones" className="form-panel-user">
             <table className="table table-hover table-bordered">
               <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Number</th>
-                </tr>
-                <tr>
-                  <td>Mobile</td>
-                  <td>abc</td>
-                </tr>
-                <tr>
-                  <td>Mobile</td>
-                  <td>abc</td>
-                </tr>
+                <tr>{heads.map(item => this.renderHeader(item))}</tr>
+                {/* {this.props.renderBodyFormUserDetail({ data: phones })} */}
               </thead>
+              {this.renderBodyPhones({ data: phones })}
             </table>
           </FormPanel>
+          <div className="group-btn-phone">
+            <Button className="btn_delete_phone" color="success">
+              Delete
+            </Button>
+            <Button className="btn_add_phone" color="success">
+              + Add New
+            </Button>
+          </div>
         </div>
       </form>
     );
   }
   render() {
-    return <div className="form-section">{this.renderSectionForm()}</div>;
+    const {
+      data: { contact = [] },
+    } = this.props;
+    return map(contact, (data, key) => (
+      <div key={key} className="form-section">
+        {this.renderSectionForm(data)}
+      </div>
+    ));
   }
 }
 
-UserDetailsContact.propTypes = {};
+UserDetailsContact.propTypes = {
+  data: PropTypes.object,
+  onChangeValueForm: PropTypes.func,
+};
 
 export default UserDetailsContact;

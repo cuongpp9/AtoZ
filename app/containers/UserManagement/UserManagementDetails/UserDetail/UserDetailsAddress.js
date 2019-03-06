@@ -1,14 +1,6 @@
 import React from 'react';
-// import { Field } from 'redux-form/immutable';
-// import CalendarBlankIcon from 'mdi-react/CalendarBlankIcon';
 import PropTypes from 'prop-types';
-// import listCurrency from '../../../constantsApp/currency.json';
-// import {
-//   FormGroup,
-//   RenderSelectField,
-//   RenderField,
-//   RenderDatePickerField,
-// } from '../../../components/form';
+import { map } from 'lodash';
 import { FormGroup } from '../../../../components/form';
 // import { required } from './validate/validate';
 export class UserDetailsAddress extends React.PureComponent {
@@ -17,82 +9,103 @@ export class UserDetailsAddress extends React.PureComponent {
     this.state = {};
   }
 
-  renderSectionForm() {
-    const isNonPaying = true;
+  onChangeValueForm = (fieldName, value) => {
+    const {
+      data: { address = [] },
+    } = this.props;
+    address[0][fieldName] = value;
+    this.props.onChangeValueForm(fieldName, address);
+  };
+
+  renderSectionForm(data) {
+    // console.log('data', data);
+    const {
+      street = '',
+      country = '',
+      city = '',
+      postalCode = '',
+      state = '',
+    } = data;
+    // const isNonPaying = true;
     return (
       <form
-        className="form form--horizontal form-detail-user"
+        className="form form--horizontal form-detail-user-address"
         onSubmit={() => {}}
       >
-        <div className="form__half">
-          <FormGroup title="Numer" className="font-weight-bold">
+        {/* <div className="form__half">
+          <FormGroup title="Number" className="font-weight-bold">
             <input
-              name="id"
+              name="Number"
               type="text"
-              placeholder="Id"
-              value="asdasd"
+              placeholder="Number"
+              value=""
               onChange={this.onChangeText}
             />
           </FormGroup>
-        </div>
+        </div> */}
         <div className="form__half">
           <FormGroup title="State" className="font-weight-bold">
             <input
-              name="id"
+              name="state"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="State"
+              value={state}
+              onChange={evt =>
+                this.onChangeValueForm('state', evt.target.value)
+              }
             />
           </FormGroup>
         </div>
         <div className="form__half">
           <FormGroup title="Street" className="font-weight-bold">
             <input
-              name="id"
+              name="street"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Street"
+              value={street}
+              onChange={evt =>
+                this.onChangeValueForm('street', evt.target.value)
+              }
+            />
+          </FormGroup>
+        </div>
+        <div className="form__half">
+          <FormGroup title="Postal Code" className="font-weight-bold">
+            <input
+              name="postalCode"
+              type="text"
+              placeholder="Postal Code"
+              value={postalCode}
+              onChange={evt =>
+                this.onChangeValueForm('postalCode', evt.target.value)
+              }
             />
           </FormGroup>
         </div>
         <div className="form__half">
           <FormGroup
-            title="Postal Code"
+            title="City"
             className="user_details_address font-weight-bold"
           >
             <input
-              name="id"
+              name="city"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="City"
+              value={city}
+              onChange={evt => this.onChangeValueForm('city', evt.target.value)}
             />
           </FormGroup>
         </div>
         <div className="form__half">
-          <FormGroup title="City" className="font-weight-bold">
+          <FormGroup title="Country" className="font-weight-bold">
             <input
-              name="id"
+              name="country"
               type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
-            />
-          </FormGroup>
-        </div>
-        <div className="form__half">
-          <FormGroup
-            title="Country"
-            className="user_details_address font-weight-bold"
-          >
-            <input
-              name="id"
-              type="text"
-              placeholder="Id"
-              value="asdasd"
-              onChange={this.onChangeText}
+              placeholder="Country"
+              value={country}
+              onChange={evt =>
+                this.onChangeValueForm('country', evt.target.value)
+              }
             />
           </FormGroup>
         </div>
@@ -100,10 +113,20 @@ export class UserDetailsAddress extends React.PureComponent {
     );
   }
   render() {
-    return <div className="form-section">{this.renderSectionForm()}</div>;
+    const {
+      data: { address = [] },
+    } = this.props;
+    return map(address, (data, key) => (
+      <div key={key} className="form-section">
+        {this.renderSectionForm(data)}
+      </div>
+    ));
   }
 }
 
-UserDetailsAddress.propTypes = {};
+UserDetailsAddress.propTypes = {
+  data: PropTypes.object,
+  onChangeValueForm: PropTypes.func,
+};
 
 export default UserDetailsAddress;

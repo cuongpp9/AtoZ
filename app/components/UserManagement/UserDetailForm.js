@@ -32,56 +32,20 @@ export class UserDetailForm extends React.PureComponent {
   }
 
   initValue = data => {
-    // const cur = listCurrency.currencies.find(
-    //   el => el.code === account.currency,
-    // );
     this.setState({
-      // customerSegment: account.customerSegment
-      //   ? dataSelect.customerSegment.find(
-      //       el => el.value === account.customerSegment,
-      //     )
-      //   : null,
-      // accountType: account.type
-      //   ? dataSelect.accountType.find(el => el.value === account.type)
-      //   : null,
-      // accountSubType: account.subType
-      //   ? dataSelect.accountSubType.find(el => el.value === account.subType)
-      //   : null,
-      // salesChannel: account.salesChannel
-      //   ? dataSelect.salesChannel.find(el => el.value === account.salesChannel)
-      //   : null,
-      // marketSegment: account.marketSegment
-      //   ? dataSelect.marketSegment.find(
-      //       el => el.value === account.marketSegment,
-      //     )
-      //   : null,
-      // sellingCompany: account.sellingCompany || '',
-      // lineOfBusiness: account.lineOfBusiness || '',
-      // legalEntity: account.legalEntity || '',
-      // reason: account.reason
-      //   ? dataSelect.accountReason.find(el => el.value === account.reason)
-      //   : null,
-      // currency: { label: `${cur.name} (${cur.code})`, value: cur.code },
       status: dataSelect.accountStatus.find(el => el.value === data.status),
       password: data.password || '',
       userType: data.type || '',
       category: data.category || '',
-      // effectiveDate: account.effectiveDate
-      //   ? moment(account.effectiveDate)
-      //   : null,
     });
   };
 
-  onChangeText = evt => {
-    this.setState({ [evt.target.name]: evt.target.value });
+  onChangeValueForm = (fieldName, value) => {
+    this.props.onChangeValueForm(fieldName, value);
   };
 
   render() {
-    const { isShowPass } = this.state;
-    // const { data } = this.props;
-
-    const { status, password, userType, category } = this.state;
-    // console.log('data', data);
+    const { status, password, userType, category, isShowPass } = this.state;
     return (
       <div className="form mt-4 mb-3">
         <Col md={6} lg={6} xl={6} className=" form__form-group pl-0 pr-3">
@@ -92,6 +56,7 @@ export class UserDetailForm extends React.PureComponent {
               options={dataSelect.accountStatus}
               placeholder="User Status"
               className="form__form-group-select"
+              onChange={evt => this.onChangeValueForm('status', evt.value)}
             />
           </div>
         </Col>
@@ -104,7 +69,9 @@ export class UserDetailForm extends React.PureComponent {
               name="password"
               type={isShowPass ? 'text' : 'password'}
               placeholder="User Password"
-              onChange={this.onChangeText}
+              onChange={evt =>
+                this.onChangeValueForm('password', evt.target.value)
+              }
             />
             <button
               style={{ width: 130 }}
@@ -118,7 +85,13 @@ export class UserDetailForm extends React.PureComponent {
         <Col md={6} lg={6} xl={6} className=" form__form-group pl-0 pr-3">
           <div className="form__form-group-field">
             <label style={{ width: 200, marginTop: 10 }}> User Type</label>
-            <input type="text" placeholder="User Type" value={userType} />
+            <input
+              type="text"
+              name="userType"
+              placeholder="User Type"
+              value={userType}
+              onChange={evt => this.onChangeValueForm('type', evt.target.value)}
+            />
           </div>
         </Col>
         <Col md={6} lg={6} xl={6} className=" form__form-group pl-0 pr-3">
@@ -142,6 +115,7 @@ export class UserDetailForm extends React.PureComponent {
 
 UserDetailForm.propTypes = {
   data: PropTypes.object,
+  onChangeValueForm: PropTypes.func,
 };
 
 export default UserDetailForm;

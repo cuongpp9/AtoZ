@@ -156,9 +156,10 @@ export function getUserByIdSuccess(payload) {
   };
 }
 
-// export function getRoleByIdFailure(payload) {
-//   return {
-//     type: types.GET_ROLES_BY_ID_FAILURE,
-//     payload,
-//   };
-// }
+export function modifyUser(payload, cb) {
+  return {
+    type: types.MODIFY_USER,
+    payload,
+    cb,
+  };
+}

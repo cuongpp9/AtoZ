@@ -204,8 +204,8 @@ export default {
     },
     {
       id: 4,
-      title: 'User→Role Groups',
-      state: 'User→Role Groups',
+      title: 'User → Role Groups',
+      state: 'User → Role Groups',
     },
   ],
 };
